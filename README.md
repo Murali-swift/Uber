@@ -1,6 +1,6 @@
 Spent 6 hours on creating the project
 
-*ViewController*
+/*ViewController*/
 This Controller have Collection view with dynamic height for row and column for all device Multiple screen resolution. Supporting landscape and portrait. 
 
 *PhotoManager*
