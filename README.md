@@ -15,6 +15,6 @@ PhotoCollectionViewCell and RefreshFooterView
 ImageView extended for downloading the image and cancel ther previous request
 View extended for adding rounded corners
  
- Missing 
+ Not got Time for below Task. Will carry out in future 
  Image Cache and Test cases.
  Only Basic test cases added in UbersTest 
