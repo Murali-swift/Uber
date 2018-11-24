@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Uber" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="YlS-bg-QsQ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="XPa-Tk-vYp"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="N24-iq-pPD"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oMs-7w-Tws">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jUc-X6-C3y">
+                                    <size key="itemSize" width="185" height="225"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="RefreshFooterView" id="rb8-0b-197" customClass="RefreshFooterView" customModule="Uber" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="10" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6Z3-bl-qPX">
+                                            <rect key="frame" x="169" y="6.5" width="37" height="37"/>
+                                            <color key="color" red="0.078431372550000003" green="0.20392156859999999" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6Z3-bl-qPX" firstAttribute="centerX" secondItem="rb8-0b-197" secondAttribute="centerX" id="7k3-QJ-EqU"/>
+                                        <constraint firstItem="6Z3-bl-qPX" firstAttribute="centerY" secondItem="rb8-0b-197" secondAttribute="centerY" id="Q4B-CC-QAZ"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="refreshLoader" destination="6Z3-bl-qPX" id="hRV-Oh-hFI"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="sZ1-zp-wgi"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iCT-3S-I8U"/>
+                                </connections>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Hv8-TX-0Ly">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.078431372550000003" green="0.20392156859999999" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oMs-7w-Tws" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="03K-e6-1rN"/>
+                            <constraint firstItem="Hv8-TX-0Ly" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gdv-MI-lAS"/>
+                            <constraint firstItem="oMs-7w-Tws" firstAttribute="top" secondItem="YlS-bg-QsQ" secondAttribute="bottom" id="GsX-7X-xbX"/>
+                            <constraint firstItem="Hv8-TX-0Ly" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jgr-nQ-m0Y"/>
+                            <constraint firstItem="YlS-bg-QsQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RaM-TX-7Hj"/>
+                            <constraint firstItem="oMs-7w-Tws" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XK0-NJ-lRr"/>
+                            <constraint firstItem="YlS-bg-QsQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h4R-9G-QXu"/>
+                            <constraint firstItem="oMs-7w-Tws" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="meb-4n-EVh"/>
+                            <constraint firstItem="YlS-bg-QsQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xwz-Wb-zgp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Hv8-TX-0Ly" id="MSI-oI-odU"/>
+                        <outlet property="photoCollectionView" destination="oMs-7w-Tws" id="lUQ-Xw-KLT"/>
+                        <outlet property="searchBar" destination="YlS-bg-QsQ" id="Lac-QL-Htm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
